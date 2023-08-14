@@ -1,9 +1,5 @@
 import React from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
-
-import { Homepage } from "./routes/Homepage";
-import { Login } from "./routes/Login";
-import { NoMatch } from "./routes/NoMatch";
+import { Routes, Route } from "react-router-dom";
 
 import "./styles/variables.css";
 import "./styles/main.css";
@@ -12,20 +8,16 @@ import "./styles/components/design/FancyRadio.css";
 import "./styles/components/OrderTypeForm.css";
 import "./styles/components/CatEmoji.css";
 
+import { routes } from "./routes";
+
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Homepage />} />
-        <Route path="login" element={<Login />} />
-        <Route path="*" element={<NoMatch />} />
-      </Route>
+      {routes.map((route) => (
+        <Route key={route.path} path={route.path} element={route.element} />
+      ))}
     </Routes>
   );
-}
-
-function Layout() {
-  return <Outlet />;
 }
 
 export default App;

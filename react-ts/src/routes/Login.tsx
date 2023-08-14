@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { OrderType, useUser } from "../state";
 import { OrderTypeForm } from "../components/OrderTypeForm";
 import { PageContent } from "../components/design/PageContent";
+import { HomePageRoute } from "../routes";
 
 export function Login() {
   const [user, setUser] = useUser();
@@ -12,7 +13,7 @@ export function Login() {
   const onOrderTypeSelectorSubmit = useCallback(
     (orderType: OrderType) => {
       setUser({ ...user, orderType });
-      navigate("/");
+      navigate(HomePageRoute.path);
     },
     [user, setUser, navigate]
   );

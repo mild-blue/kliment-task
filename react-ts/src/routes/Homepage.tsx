@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { OrderType, useUser } from "../state";
 import { PageContent } from "../components/design/PageContent";
 import { CatEmoji } from "../components/CatEmoji";
+import { LoginRoute } from "../routes";
 
 const orderTypeLabel: { [key in OrderType]: string } = {
   [OrderType.SCREENING]: "vyšetření",
@@ -16,7 +17,7 @@ export function Homepage() {
 
   useEffect(() => {
     if (user.orderType === null) {
-      navigate("/login");
+      navigate(LoginRoute.path);
     }
   }, [navigate, user]);
 
@@ -34,7 +35,7 @@ export function Homepage() {
         <p>Než Vás naši asistenti obslouží, přijměte jako malý dárek následující kočičí emoji.</p>
         <CatEmoji />
         <p>
-          Chcete změnit výběr? <Link to="/login">Volte znovu.</Link>
+          Chcete změnit výběr? <Link to={LoginRoute.path}>Volte znovu.</Link>
         </p>
       </PageContent>
     </>
