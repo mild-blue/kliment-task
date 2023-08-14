@@ -1,0 +1,6 @@
+.PageContent {
+  background-color: var(--box-bg-color);
+  box-shadow: 0 3px 6px var(--box-shadow-color);
+  border-radius: 6px;
+  padding: 50px 30px;
+}
