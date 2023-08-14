@@ -1,0 +1,17 @@
+:root {
+  --main-bg-color: #f8f8f8;
+  --main-color: #000000;
+
+  --link-color: #e2001a;
+
+  --box-bg-color: #ffffff;
+  --box-shadow-color: #00000029;
+
+  --option-not-selected-bg-color: #f8f8f8;
+  --option-not-selected-color: #dedede;
+  --option-selected-bg-color: #ffffff;
+  --option-selected-color: #e2001a;
+
+  --button-bg-color: #e2001a;
+  --button-color: #ffffff;
+}

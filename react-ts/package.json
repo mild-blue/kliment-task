@@ -9,7 +9,8 @@
     "eject": "react-scripts eject",
     "prettier-format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "prettier-check": "prettier --check './**/*.{js,jsx,ts,tsx,css,md,json}'",
-    "lint-check": "eslint -c .eslintrc.json --max-warnings=0 src"
+    "lint-check": "./node_modules/.bin/eslint -c .eslintrc.json --max-warnings=0 src",
+    "prepare": "cd .. && husky install react-ts/.husky"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,6 +28,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-require-explicit-generics": "^0.4.2",
+    "husky": "^8.0.3",
     "prettier": "3.0.1",
     "react-scripts": "5.0.1",
     "typescript": "v4.8.4"
